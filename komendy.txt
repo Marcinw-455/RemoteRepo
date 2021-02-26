@@ -7,3 +7,6 @@ git push/fetch
 git add
 git commit -m
 git config --local user.name ""
+git amend
+git pull
+git rebase
