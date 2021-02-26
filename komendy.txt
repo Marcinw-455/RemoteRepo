@@ -7,3 +7,4 @@ git push/fetch
 git add
 git commit -m
 git config --local user.name ""
+git checkout -b "nowe branch"
