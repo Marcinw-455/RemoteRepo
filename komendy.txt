@@ -1,0 +1,8 @@
+git graph
+git checkout
+git init
+git branch -r 
+git config
+git push/fetch
+git add
+git commit -m
