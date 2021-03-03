@@ -1,0 +1,19 @@
+{
+  "name": "remoterepo",
+  "version": "1.0.0",
+  "description": "jakieś cos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marcinw-455/RemoteRepo.git"
+  },
+  "author": "Marcin Wojs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marcinw-455/RemoteRepo/issues"
+  },
+  "homepage": "https://github.com/Marcinw-455/RemoteRepo#readme"
+}
