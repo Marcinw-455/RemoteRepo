@@ -1,0 +1,10 @@
+import initDialog from './js/dialog.js';
+console.log("hello world");
+console.log("hello world2");
+console.log("hello world2");
+console.log("hello world2");
+initDialog();
+import createDialogWindow from "./js/dialog.js";
+createDialogWindow();
+import createDialogElement from "./js/dialog.js";
+createDialogElement();

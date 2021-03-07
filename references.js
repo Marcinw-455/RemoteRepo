@@ -1,0 +1,14 @@
+window;
+document;
+document.body;
+element;
+document.createElement();
+document.getElementsByClassName();
+document.getElementById();
+document.querySelector();
+document.append();
+document.innerText = "";
+document.innerHTML = "";
+document.body.classList = "";
+document.body.classList.add();
+document.body.classList.remove();
