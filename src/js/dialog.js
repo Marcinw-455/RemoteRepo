@@ -19,37 +19,34 @@ const closeButtons = function () {
     });
 };
 
-const createDialogElement = function (type, classList){
+const createDialogElement = function (type, classList = "default", text = ""){
     const element = document.createElement(type);
     element.classList = classList;
+    element.innerHTML = text;
     return element;
 }
 
 const createDialogWindow = function () {
     const mainContainer = document.getElementById('main-container');
-    const modalDialog = createDialogElement("div", "modal-dialog")
+    const modalDialog = createDialogElement("div","modal-dialog", "")
+    const modalContent = createDialogElement("div", "modal-content", "");
+    const modalHeader = createDialogElement("div", "modal-header", "");
+    const modalTitle = createDialogElement("h5", "modal-title", "Modal title");
+    const modalHeaderButtonClose = createDialogElement("button", "modal-header-button-close", "");
+    const modalBody = createDialogElement("div", "modal-body", "<p>Modal body text goes here.</p>");
+    const modalFooter = createDialogElement("div", "modal-footer", "");
+    const modalFooterButtonClose = createDialogElement("button", "modal-footer-button-close", "close");
+    const modalFooterButtonSave = createDialogElement("button", "modal-footer-button-save", "Save changes");
     mainContainer.appendChild(modalDialog);
-    const modalContent = createDialogElement("div", "modal-content");
     modalDialog.appendChild(modalContent);
-    const modalHeader = createDialogElement("div", "modal-header");
     modalContent.appendChild(modalHeader);
-    const modalTitle = createDialogElement("h5", "modal-title");
-    modalTitle.innerText = "Modal title";
     modalHeader.appendChild(modalTitle);
-    const modalHeaderButtonClose = createDialogElement("button", "modal-header-button-close");
     modalHeaderButtonClose.setAttribute("data-dismiss", "modal");
     modalHeaderButtonClose.setAttribute("aria-label", "Close");
     modalHeader.appendChild(modalHeaderButtonClose);
-    const modalBody = createDialogElement("div", "modal-body");
-    modalBody.innerHTML = "<p>Modal body text goes here.</p>";
     modalHeader.appendChild(modalBody);
-    const modalFooter = createDialogElement("div", "modal-footer");
     modalContent.appendChild(modalFooter);
-    const modalFooterButtonClose = createDialogElement("button", "modal-footer-button-close");
-    modalFooterButtonClose.innerHTML = "close";
-    modalFooterButtonClose.setAttribute("data-dismiss", "modal");
+    modalFooterButtonClose.setAttribute("data-dismiss", "modal", "");
     modalFooter.appendChild(modalFooterButtonClose);
-    const modalFooterButtonSave = createDialogElement("button", "modal-footer-button-save");
-    modalFooterButtonSave.innerHTML = "Save changes";
     modalFooter.appendChild(modalFooterButtonSave);
 }
