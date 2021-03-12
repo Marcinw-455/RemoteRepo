@@ -1,5 +1,8 @@
 .main-header {
-    background-color: grey;
+    background-color: red;
     width: 100px;
     height: 100px;
+}
+.dialog-button{
+    background-color: red;
 }
