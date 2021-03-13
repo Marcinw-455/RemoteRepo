@@ -1,8 +1,26 @@
 .main-header {
     background-color: red;
-    width: 100px;
+    w44idth: 100px;
     height: 100px;
 }
 .dialog-button{
     background-color: red;
+}
+#great-wall{
+    width: 1000px;
+    height: 500px;
+}
+.red-brick{
+    width: 50px;
+    height: 40px;
+    background-color: darkred;
+    border-style: groove;
+    float: left;
+}
+.brown-brick{
+    width: 50px;
+    height: 40px;
+    background-color: saddlebrown;
+    border-style: groove;
+    float: left;
 }
