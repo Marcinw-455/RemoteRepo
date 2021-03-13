@@ -3,7 +3,29 @@ export default function initLoop () {
   loopButton.onclick = function () {
     inputLoop();
     createGreatWall();
+    removeWall();
   };
+}
+
+const removeWall = function(){
+  const demolishButton = document.getElementById('demolish-button');
+  demolishButton.onclick = function () {
+    tearDownWall();
+    createGreatWall();
+    repairWall();
+  }
+}
+
+const tearDownWall = function()
+{
+  const elem = document.getElementById("great-wall");
+  elem.parentNode.removeChild(elem);
+}
+
+const repairWall = function(){
+  const greatWall = createGreatWall("div","great-wall");
+  const wallContainer = document.getElementById("wall-container");
+  wallContainer.append(greatWall);
 }
 
 const createGreatWall= function (type, classList = "red-brick"){
