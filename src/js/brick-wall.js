@@ -5,7 +5,7 @@ export default function initWallComponent () {
     inputLoop();
     createBrickWall();
     bindDemolishButtonAction();
-  };
+  }
 }
 
 const bindDemolishButtonAction = function(){
@@ -15,8 +15,7 @@ const bindDemolishButtonAction = function(){
   }
 }
 
-const tearDownWall = function()
-{
+const tearDownWall = function(){
   const greatWall = document.getElementById("great-wall");
   const elem = document.getElementById("great-wall");
   if (greatWall === null){
