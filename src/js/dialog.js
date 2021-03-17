@@ -32,21 +32,19 @@ const createDialogWindow = () => {
     const modalContent = createDialogElement("div", "modal-content", "");
     const modalHeader = createDialogElement("div", "modal-header", "");
     const modalTitle = createDialogElement("h5", "modal-title", "Modal title");
-    const modalHeaderButtonClose = createDialogElement("button", "modal-header-button-close", "");
+    const modalHeaderButtonClose = createDialogElement("button", "close", ` <span aria-hidden="true">&times;</span>`);
     const modalBody = createDialogElement("div", "modal-body", "<p>Modal body text goes here.</p>");
     const modalFooter = createDialogElement("div", "modal-footer", "");
-    const modalFooterButtonClose = createDialogElement("button", "modal-footer-button-close", "close");
-    const modalFooterButtonSave = createDialogElement("button", "modal-footer-button-save", "Save changes");
-    mainContainer.appendChild(modalDialog);
-    modalDialog.appendChild(modalContent);
-    modalContent.appendChild(modalHeader);
-    modalHeader.appendChild(modalTitle);
+    const modalFooterButtonClose = createDialogElement("button", "btn btn-secondary", "close");
+    const modalFooterButtonSave = createDialogElement("button", "btn btn-primary", "Save changes");
+
+    modalHeaderButtonClose.setAttribute("type", "button");
     modalHeaderButtonClose.setAttribute("data-dismiss", "modal");
     modalHeaderButtonClose.setAttribute("aria-label", "Close");
-    modalHeader.appendChild(modalHeaderButtonClose);
-    modalHeader.appendChild(modalBody);
-    modalContent.appendChild(modalFooter);
     modalFooterButtonClose.setAttribute("data-dismiss", "modal", "");
-    modalFooter.appendChild(modalFooterButtonClose);
-    modalFooter.appendChild(modalFooterButtonSave);
+    modalHeader.append(modalTitle, modalHeaderButtonClose);
+    modalFooter.append(modalFooterButtonClose, modalFooterButtonSave);
+    modalContent.append(modalHeader, modalBody,modalFooter);
+    modalDialog.append(modalContent);
+    mainContainer.append(modalDialog);
 }
