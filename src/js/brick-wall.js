@@ -1,60 +1,43 @@
-export default function initWallComponent () {
+const initWallComponent = () => {
+  bindDemolishButtonAction();
+  bindBuildButton();
+}
+
+export default initWallComponent;
+
+const bindBuildButton = () => {
   const loopButton = document.getElementById('loop-button');
-  loopButton.onclick = function () {
-    createMainWall();
+  loopButton.onclick = () => {
     inputLoop();
-    createBrickWall();
-    bindDemolishButtonAction();
   }
 }
 
-const bindDemolishButtonAction = function(){
+const bindDemolishButtonAction = () => {
   const demolishButton = document.getElementById('demolish-button');
-  demolishButton.onclick = function () {
+  demolishButton.onclick = () => {
     tearDownWall();
   }
 }
 
-const tearDownWall = function(){
-  const greatWall = document.getElementById("great-wall");
-  const elem = document.getElementById("great-wall");
-  if (greatWall === null){
-    alert("Nothing to tear down");
-  }
-  else
-  {
-    elem.parentNode.removeChild(elem);
+const tearDownWall = () => {
+  const greatWall = document.getElementById('great-wall');
+  while (greatWall.lastElementChild){
+    greatWall.removeChild(greatWall.lastElementChild);
   }
 }
 
-const createMainWall = function(){
-  let greatWall = document.getElementById("great-wall");
-  const wallContainer = document.getElementById("wall-container");
-  if (greatWall === null){
-      greatWall = document.createElement("div");
-      greatWall.setAttribute("id", "great-wall");
-      wallContainer.append(greatWall);
-  }
-}
-
-const createBrickWall= function (type, classList){
+const createBrick = (type, classList) => {
   const element = document.createElement(type);
   element.classList = classList;
   return element;
 }
 
-const inputLoop = function (){
+const inputLoop = () => {
   let loops = document.getElementById("looper").value;
-  let typeBrick = document.getElementById("brick-type").selectedIndex;
+  let typeBrick = document.getElementById("brick-type").value;
   const greatWall = document.getElementById('great-wall');
   for (let step = 0; step < loops; step++) {
-    if (typeBrick === 0){
-      const redBrickWall = createBrickWall("div","red-brick-wall")
+      const redBrickWall = createBrick("div",  `${typeBrick}-brick-wall`);
       greatWall.appendChild(redBrickWall);
-    }
-    else {
-      const grayBrickWall = createBrickWall("div","gray-brick-wall")
-      greatWall.appendChild(grayBrickWall);
-    }
   }
 }

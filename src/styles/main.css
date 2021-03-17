@@ -24,3 +24,10 @@
     border-style: groove;
     float: left;
 }
+.blue-brick-wall{
+    width: 50px;
+    height: 40px;
+    background-color: blue;
+    border-style: groove;
+    float: left;
+}
