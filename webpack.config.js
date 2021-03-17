@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+    devtool: 'inline-source-map',
     entry: './src/index.js',
     output: {
         filename: 'main.js',
@@ -11,12 +12,12 @@ module.exports = {
         compress: true,
         port: 3000,
     },
-        module: {
-            rules: [
-                {
-                    test: /\.css$/i,
-                    use: ["style-loader", "css-loader"],
-                },
-            ],
-        },
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
+        ],
+    },
 };

@@ -1,32 +1,32 @@
-export default function initDialog () {
+export default function () {
     const dialogButton = document.getElementById('dialog-button');
-    dialogButton.onclick = function () {
+    dialogButton.onclick = () =>{
         createDialogWindow();
         saveButton();
         closeButtons();
     };
 }
 
-const saveButton = function () {
-    document.querySelector(".modal-footer-button-save").addEventListener('click', function () {
+const saveButton = () => {
+    document.querySelector(".modal-footer-button-save").addEventListener('click', () => {
         alert("Success!");
     });
 };
 
-const closeButtons = function () {
-    document.querySelector(".modal-footer-button-close").addEventListener('click', function () {
+const closeButtons = () => {
+    document.querySelector(".modal-footer-button-close").addEventListener('click', () => {
         document.querySelector(".modal-dialog").classList.add("d-none");
     });
 };
 
-const createDialogElement = function (type, classList = "default", text = ""){
+const createDialogElement = (type, classList = "default", text = "") => {
     const element = document.createElement(type);
     element.classList = classList;
     element.innerHTML = text;
     return element;
 }
 
-const createDialogWindow = function () {
+const createDialogWindow = () => {
     const mainContainer = document.getElementById('main-container');
     const modalDialog = createDialogElement("div","modal-dialog", "")
     const modalContent = createDialogElement("div", "modal-content", "");
